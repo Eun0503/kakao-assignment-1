@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Todo</title>
+    <!-- 구글 폰트 적용 (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo-container">
+        <!-- 앱 타이틀 -->
+        <header class="todo-header">
+            <h1>Todo List</h1>
+        </header>
+
+        <!-- 주간 뷰 네비게이터 영역 -->
+        <div class="weekly-navigator">
+            <div class="week-header">
+                <button id="prev-week-btn" class="nav-btn" aria-label="이전 주">&lt;</button>
+                <span id="current-month-display"></span>
+                <button id="next-week-btn" class="nav-btn" aria-label="다음 주">&gt;</button>
+            </div>
+            <div id="week-days-container" class="week-days-container">
+                <!-- app.js에서 월요일부터 일요일까지의 날짜 카드가 동적 생성됩니다 -->
+            </div>
+        </div>
+
+        <!-- Todo 입력 영역 -->
+        <form id="todo-form" class="todo-form">
+            <div class="input-group">
+                <input type="text" id="todo-input" placeholder="오늘 할 일을 입력하세요..." autocomplete="off">
+                <button type="submit" id="add-btn">추가</button>
+            </div>
+            <!-- 빈 입력값일 때 표시되는 안내 메시지 -->
+            <p id="alert-message" class="alert-message"></p>
+        </form>
+
+        <!-- 상태별 필터 탭 영역 -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="active">진행 중</button>
+            <button class="filter-btn" data-filter="completed">완료</button>
+        </div>
+
+        <!-- Todo 리스트 출력 영역 -->
+        <main class="todo-main">
+            <ul id="todo-list" class="todo-list">
+                <!-- app.js에서 동적으로 할 일 항목들이 추가됩니다 -->
+            </ul>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
